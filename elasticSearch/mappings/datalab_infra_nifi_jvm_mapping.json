@@ -1,0 +1,71 @@
+#PUT _template/datalake_infra_nifi_jvm_template
+{
+  "index_patterns": ["datalake_infra_nifi_jvm-*"],
+    "settings": {
+      "number_of_shards": 1
+    },
+    "mappings" : {
+      "jvm" : {
+        "properties" : {
+          "@timestamp" : {
+            "type" : "date"
+          },
+          "jvm" : {
+            "properties" : {
+              "daemon_thread_count" : {
+                "type" : "integer"
+              },
+              "thread_count" : {
+                "type" : "integer"
+              },
+              "file_descriptor_usage" : {
+                "type" : "float"
+              },
+              "gc.runs.G1YoungGeneration" : {
+                "type" : "integer"
+              },
+              "gc.runs.G1OldGeneration" : {
+                "type" : "integer"
+              },
+              "gc.time.G1YoungGeneration" : {
+                "type" : "integer"
+              },
+              "gc.time.G1OldGeneration" : {
+                "type" : "integer"
+              },
+              "heap_usage" : {
+                "type" : "double"
+              },
+              "heap_used" : {
+                "type" : "double"
+              },
+              "non_heap_usage" : {
+                "type" : "double"
+              },
+              "thread_states.blocked" : {
+                "type" : "integer"
+              },
+              "thread_states.runnable" : {
+                "type" : "integer"
+              },
+              "thread_states.terminated" : {
+                "type" : "integer"
+              },
+              "thread_states.timed_waiting" : {
+                "type" : "integer"
+              },
+              "uptime" : {
+                "type" : "double"
+              }
+            }
+          },
+          "nodeId" : {
+            "type" : "keyword"
+          },
+          "hostname" : {
+            "type" : "keyword"
+          }
+        }
+      }
+    }
+}

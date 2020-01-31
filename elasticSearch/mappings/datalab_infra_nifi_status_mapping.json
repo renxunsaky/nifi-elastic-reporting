@@ -1,0 +1,345 @@
+#PUT _template/datalake_infra_nifi_status_template
+{
+  "index_patterns": ["datalake_infra_nifi_status-*"],
+  "settings": {
+    "number_of_shards": 1
+  },
+  "mappings" : {
+    "status" : {
+      "properties" : {
+        "@timestamp" : {
+          "type" : "date"
+        },
+        "activeThreadCount" : {
+          "type" : "long"
+        },
+        "bytesRead" : {
+          "type" : "long"
+        },
+        "bytesReceived" : {
+          "type" : "long"
+        },
+        "bytesSent" : {
+          "type" : "long"
+        },
+        "bytesTransferred" : {
+          "type" : "long"
+        },
+        "bytesWritten" : {
+          "type" : "long"
+        },
+        "connectionStatus" : {
+          "properties" : {
+            "backPressureBytesThreshold" : {
+              "type" : "long"
+            },
+            "backPressureDataSizeThreshold" : {
+              "type" : "text"
+            },
+            "backPressureObjectThreshold" : {
+              "type" : "long"
+            },
+            "destinationId" : {
+              "type" : "keyword"
+            },
+            "destinationName" : {
+              "type" : "text"
+            },
+            "groupId" : {
+              "type" : "keyword"
+            },
+            "id" : {
+              "type" : "keyword"
+            },
+            "inputBytes" : {
+              "type" : "long"
+            },
+            "inputCount" : {
+              "type" : "long"
+            },
+            "maxQueuedBytes" : {
+              "type" : "long"
+            },
+            "maxQueuedCount" : {
+              "type" : "long"
+            },
+            "name" : {
+              "type" : "text"
+            },
+            "outputBytes" : {
+              "type" : "long"
+            },
+            "outputCount" : {
+              "type" : "long"
+            },
+            "queuedBytes" : {
+              "type" : "long"
+            },
+            "queuedCount" : {
+              "type" : "long"
+            },
+            "sourceId" : {
+              "type" : "keyword"
+            },
+            "sourceName" : {
+              "type" : "text"
+            }
+          }
+        },
+        "flowFilesReceived" : {
+          "type" : "long"
+        },
+        "flowFilesSent" : {
+          "type" : "long"
+        },
+        "flowFilesTransferred" : {
+          "type" : "long"
+        },
+        "inputContentSize" : {
+          "type" : "long"
+        },
+        "inputCount" : {
+          "type" : "long"
+        },
+        "name" : {
+          "type" : "keyword"
+        },
+        "outputContentSize" : {
+          "type" : "long"
+        },
+        "outputCount" : {
+          "type" : "long"
+        },
+        "processGroupStatus" : {
+          "properties" : {
+            "activeThreadCount" : {
+              "type" : "long"
+            },
+            "bytesRead" : {
+              "type" : "long"
+            },
+            "bytesReceived" : {
+              "type" : "long"
+            },
+            "bytesSent" : {
+              "type" : "long"
+            },
+            "bytesTransferred" : {
+              "type" : "long"
+            },
+            "bytesWritten" : {
+              "type" : "long"
+            },
+            "flowFilesReceived" : {
+              "type" : "long"
+            },
+            "flowFilesSent" : {
+              "type" : "long"
+            },
+            "flowFilesTransferred" : {
+              "type" : "long"
+            },
+            "reportId" : {
+              "type" : "text"
+            },
+            "groupId" : {
+              "type" : "keyword"
+            },
+            "inputContentSize" : {
+              "type" : "long"
+            },
+            "inputCount" : {
+              "type" : "long"
+            },
+            "inputPortStatus" : {
+              "properties" : {
+                "activeThreadCount" : {
+                  "type" : "long"
+                },
+                "bytesReceived" : {
+                  "type" : "long"
+                },
+                "bytesSent" : {
+                  "type" : "long"
+                },
+                "flowFilesReceived" : {
+                  "type" : "long"
+                },
+                "flowFilesSent" : {
+                  "type" : "long"
+                },
+                "groupId" : {
+                  "type" : "keyword"
+                },
+                "id" : {
+                  "type" : "keyword"
+                },
+                "inputBytes" : {
+                  "type" : "long"
+                },
+                "inputCount" : {
+                  "type" : "long"
+                },
+                "name" : {
+                  "type" : "text"
+                },
+                "outputBytes" : {
+                  "type" : "long"
+                },
+                "outputCount" : {
+                  "type" : "long"
+                },
+                "runStatus" : {
+                  "type" : "text"
+                }
+              }
+            },
+            "name" : {
+              "type" : "text"
+            },
+            "outputContentSize" : {
+              "type" : "long"
+            },
+            "outputCount" : {
+              "type" : "long"
+            },
+            "outputPortStatus" : {
+              "properties" : {
+                "activeThreadCount" : {
+                  "type" : "long"
+                },
+                "bytesReceived" : {
+                  "type" : "long"
+                },
+                "bytesSent" : {
+                  "type" : "long"
+                },
+                "flowFilesReceived" : {
+                  "type" : "long"
+                },
+                "flowFilesSent" : {
+                  "type" : "long"
+                },
+                "groupId" : {
+                  "type" : "keyword"
+                },
+                "id" : {
+                  "type" : "keyword"
+                },
+                "inputBytes" : {
+                  "type" : "long"
+                },
+                "inputCount" : {
+                  "type" : "long"
+                },
+                "name" : {
+                  "type" : "text"
+                },
+                "outputBytes" : {
+                  "type" : "long"
+                },
+                "outputCount" : {
+                  "type" : "long"
+                },
+                "runStatus" : {
+                  "type" : "text"
+                }
+              }
+            },
+            "processorStatus" : {
+              "properties" : {
+                "activeThreadCount" : {
+                  "type" : "long"
+                },
+                "averageLineageDuration" : {
+                  "type" : "long"
+                },
+                "bytesRead" : {
+                  "type" : "long"
+                },
+                "bytesReceived" : {
+                  "type" : "long"
+                },
+                "bytesSent" : {
+                  "type" : "long"
+                },
+                "bytesWritten" : {
+                  "type" : "long"
+                },
+                "counters" : {
+                  "type" : "object"
+                },
+                "executionNode" : {
+                  "type" : "text"
+                },
+                "flowFilesReceived" : {
+                  "type" : "long"
+                },
+                "flowFilesRemoved" : {
+                  "type" : "long"
+                },
+                "flowFilesSent" : {
+                  "type" : "long"
+                },
+                "groupId" : {
+                  "type" : "keyword"
+                },
+                "id" : {
+                  "type" : "keyword"
+                },
+                "inputBytes" : {
+                  "type" : "long"
+                },
+                "inputCount" : {
+                  "type" : "long"
+                },
+                "invocations" : {
+                  "type" : "long"
+                },
+                "name" : {
+                  "type" : "text"
+                },
+                "outputBytes" : {
+                  "type" : "long"
+                },
+                "outputCount" : {
+                  "type" : "long"
+                },
+                "processingNanos" : {
+                  "type" : "long"
+                },
+                "runStatus" : {
+                  "type" : "text"
+                },
+                "terminatedThreadCount" : {
+                  "type" : "long"
+                },
+                "type" : {
+                  "type" : "text"
+                }
+              }
+            },
+            "queuedContentSize" : {
+              "type" : "long"
+            },
+            "queuedCount" : {
+              "type" : "long"
+            },
+            "terminatedThreadCount" : {
+              "type" : "long"
+            }
+          }
+        },
+        "queuedContentSize" : {
+          "type" : "long"
+        },
+        "reportId" : {
+          "type" : "text"
+        },
+        "terminatedThreadCount" : {
+          "type" : "long"
+        }
+      }
+    }
+  }
+}
