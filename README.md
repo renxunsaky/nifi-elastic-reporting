@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/jfrazee/nifi-provenance-reporting-bundle.svg?branch=master)](https://travis-ci.org/jfrazee/nifi-provenance-reporting-bundle)
 
-# nifi-provenance-reporting-bundle
+# nifi-reporting-bundle
 
 NiFi provenance reporting tasks.
 
